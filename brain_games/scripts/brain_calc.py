@@ -8,15 +8,17 @@ def main():
     print('Welcome to the Brain Games!')
     name = brain_games.cli.welcome_user()
     print(f'Hello, {name}!')
-    print('Answer "yes" if the number is even, otherwise answer "no".')
+    print('What is the result of the expression?')
     three_correct_answer = True
 
     for i in range(3):
-        num = brain_games.even.random_number()
-        print(f'Question: {num}')
-        correct = brain_games.even.is_even(num)
+        num_1 = brain_games.even.random_number()
+        num_2 = brain_games.even.random_number()
+        sym = brain_games.even.random_symbol()
+        print(f'Question: {num_1} {sym} {num_2}')
+        correct = brain_games.even.calculator(sym, num_1, num_2)
         answ = brain_games.even.answer()
-        if correct != answ:
+        if int(correct) != int(answ):
             string = "is wrong answer ;(. Correct answer was"
             print(f"'{answ}' {string} '{correct}'.")
             print(f"Let's try again, {name}!")
