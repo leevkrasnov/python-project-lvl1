@@ -20,9 +20,8 @@ def main():
             string = "is wrong answer ;(. Correct answer was"
             print(f"'{answ}' {string} '{correct}'.")
             print(f"Let's try again, {name}!")
-            # three_correct_answer = False
-            break
             three_correct_answer = False
+            break
         else:
             print("Correct!")
     if three_correct_answer:

@@ -12,9 +12,9 @@ def main():
     three_correct_answer = True
 
     for i in range(3):
-        num_1 = brain_games.even.random_number()
-        num_2 = brain_games.even.random_number()
-        sym = brain_games.even.random_symbol()
+        num_1 = brain_games.even.get_random_number()
+        num_2 = brain_games.even.get_random_number()
+        sym = brain_games.even.get_random_symbol()
         print(f'Question: {num_1} {sym} {num_2}')
         correct = brain_games.even.calculator(sym, num_1, num_2)
         answ = brain_games.even.answer()
