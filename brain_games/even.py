@@ -34,3 +34,26 @@ def answer():
 
 def get_find_gcd(num1=1, num2=2):
     return math.gcd(num1, num2)
+
+
+def genetate_gen(min=5, max=10):
+    gen = []
+    start_num = get_random_number(1, 10)
+    gen.append(start_num)
+    step = get_random_number(1, 10)
+    for i in range(get_random_number(min, max) - 1):
+        start_num += step
+        gen.append(start_num)
+    return gen
+
+
+def get_progression():
+    progression = genetate_gen()
+    hide_num = random.choice(progression)
+    progression_str = ''
+    for num in progression:
+        if hide_num == num:
+            progression_str += '.. '
+        else:
+            progression_str = progression_str + f'{num} '
+    return hide_num, progression_str
