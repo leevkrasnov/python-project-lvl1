@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+
+import brain_games.even
+import brain_games.cli
+
+
+def main():
+    print('Welcome to the Brain Games!')
+    name = brain_games.cli.welcome_user()
+    print(f'Hello, {name}!')
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
+    three_correct_answer = True
+
+    for i in range(3):
+        num = brain_games.even.get_random_number()
+        print(f'Question: {num}')
+        correct = str(brain_games.even.get_simple_num(num))
+        answ = brain_games.even.answer()
+        if correct != answ:
+            string = "is wrong answer ;(. Correct answer was"
+            print(f"'{answ}' {string} '{correct}'.")
+            print(f"Let's try again, {name}!")
+            three_correct_answer = False
+            break
+        else:
+            print("Correct!")
+    if three_correct_answer:
+        print(f"Congratulations, {name}!")
+
+
+if __name__ == '__main__':
+    main()

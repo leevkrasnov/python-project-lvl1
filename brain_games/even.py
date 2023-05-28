@@ -57,3 +57,11 @@ def get_progression():
         else:
             progression_str = progression_str + f'{num} '
     return hide_num, progression_str
+
+
+def get_simple_num(num):
+    counter = 0
+    for i in range(2, num // 2 + 1):
+        if num % i == 0:
+            counter += 1
+    return 'yes' if counter <= 0 else 'no'
